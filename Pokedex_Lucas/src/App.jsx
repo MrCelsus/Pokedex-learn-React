@@ -6,7 +6,7 @@ import PokemonCard from "./components/PokemonCard";
 
 function App() {
   const pokemonList = [
-    {
+    {  
       name: "bulbasaur",
       imgSrc:
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
@@ -43,7 +43,7 @@ function App() {
 
   return (
     <div>
-      <NavBar  indexPokemon={indexPokemon} setIndexPokemon={setIndexPokemon} pokemonList={pokemonList} />
+      <NavBar  indexPokemon={indexPokemon} setIndexPokemon={setIndexPokemon} pokemonList={pokemonList}/>
       <PokemonCard name={pokemonList[indexPokemon].name} img= {pokemonList[indexPokemon].imgSrc} />
     </div>
   )

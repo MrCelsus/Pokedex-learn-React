@@ -1,17 +1,21 @@
 
 
 function NavBar({indexPokemon,setIndexPokemon,pokemonList}){
-    function  handleClickNext() {
-        setIndexPokemon(indexPokemon + 1)
+    
+    function  handleClickChangePokemon(index) {
+        setIndexPokemon(indexPokemon = index)
       }
-      function handleClickBack()  {
-        setIndexPokemon(indexPokemon - 1)
-      }
+   
     
       return (
         <>
-        {(indexPokemon > 0) ?(<button onClick={handleClickBack}>Back</button>) : ""}
-        {(indexPokemon < pokemonList.length - 1) ? (<button onClick={handleClickNext}>Next</button>) : "" }
+        {pokemonList.map((pokemon,index)=>
+         <button 
+          key={pokemon.name} 
+          onClick={() => handleClickChangePokemon(index)}> {pokemon.name} </button>)}
+       
+        {/* {(indexPokemon > 0) ?(<button onClick={handleClickBack}>Back</button>) : ""}
+        {(indexPokemon < pokemonList.leng - 1) ? (<button onClick={handleClickNext}>Next</button>) : "" } */}
         </>
       )
 }
